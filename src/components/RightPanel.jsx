@@ -1,10 +1,33 @@
 import React, { useState } from "react";
-import SearchableDropdown from "./SearchableDropdown";
+import Dropdown from "./Dropdown";
 
-const HEADCOUNT_OPTIONS = ["1-10", "11-50", "51-200", "201-500", "501-1000", "1000+"];
-const LOCATION_OPTIONS = ["India", "United States", "United Kingdom", "Germany", "Australia", "Canada", "Singapore"];
+const HEADCOUNT_OPTIONS = [
+  "1-10",
+  "11-50",
+  "51-200",
+  "201-500",
+  "501-1000",
+  "1000+",
+];
+const LOCATION_OPTIONS = [
+  "India",
+  "United States",
+  "United Kingdom",
+  "Germany",
+  "Australia",
+  "Canada",
+  "Singapore",
+];
 const REVENUE_OPTIONS = ["50L - 1Cr", "1Cr - 5Cr", "5Cr - 20Cr", "20Cr+"];
-const DEPARTMENT_OPTIONS = ["Engineering", "Sales", "Marketing", "Operations", "HR", "Finance", "Product"];
+const DEPARTMENT_OPTIONS = [
+  "Engineering",
+  "Sales",
+  "Marketing",
+  "Operations",
+  "HR",
+  "Finance",
+  "Product",
+];
 
 const RightPanel = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -23,12 +46,15 @@ const RightPanel = () => {
         Let's define your <span className="text-yellow-600">targets</span>
       </h3>
       <p className="text-sm text-gray-600 mb-6">
-        Focus on the most relevant fields to shape your ICP — all fields are optional
+        Focus on the most relevant fields to shape your ICP — all fields are
+        optional
       </p>
 
       <div className="mb-6">
-        <h4 className="text-base font-medium text-gray-800 mb-4">Company Profile</h4>
-        <SearchableDropdown
+        <h4 className="text-base font-medium text-gray-800 mb-4">
+          Company Profile
+        </h4>
+        <Dropdown
           label="Company Headcount"
           value={headcount}
           onChange={setHeadcount}
@@ -37,7 +63,7 @@ const RightPanel = () => {
           isOpen={openDropdown === "headcount"}
           onToggle={() => handleToggle("headcount")}
         />
-        <SearchableDropdown
+        <Dropdown
           label="Company HQ Locations"
           value={hq}
           onChange={setHq}
@@ -46,7 +72,7 @@ const RightPanel = () => {
           isOpen={openDropdown === "hq"}
           onToggle={() => handleToggle("hq")}
         />
-        <SearchableDropdown
+        <Dropdown
           label="Revenue Range"
           value={revenue}
           onChange={setRevenue}
@@ -58,8 +84,10 @@ const RightPanel = () => {
       </div>
 
       <div>
-        <h4 className="text-base font-medium text-gray-800 mb-4">Prospect Profile</h4>
-        <SearchableDropdown
+        <h4 className="text-base font-medium text-gray-800 mb-4">
+          Prospect Profile
+        </h4>
+        <Dropdown
           label="Department"
           value={department}
           onChange={setDepartment}
