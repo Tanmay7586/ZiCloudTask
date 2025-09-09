@@ -21,10 +21,10 @@ const Header = ({ title = "Untitled List" }) => {
         <ProgressSteps current={0} />
       </div>
       <div className="flex items-center gap-3">
-        <button className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700">
+        <button className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 cursor-pointer">
           Save
         </button>
-        <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-medium">
+        <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-medium cursor-pointer">
           Make Campaign
         </button>
       </div>

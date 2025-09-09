@@ -33,7 +33,7 @@ const SideNav = () => {
     return (
       <button
         onClick={() => setActiveItem(name)}
-        className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
+        className={` cursor-pointer w-10 h-10 flex items-center justify-center rounded-full transition-colors ${
           isActive ? "bg-amber-100" : "hover:bg-gray-100"
         }`}
       >
@@ -46,13 +46,13 @@ const SideNav = () => {
     <aside className="w-20 h-screen flex flex-col items-center py-5 px-2 bg-white border-r border-gray-200">
       <div className="flex flex-col items-center gap-6">
         <div className="flex items-center justify-center mt-5">
-          <img src={LogoIcon} alt="Logo" className="w-full h-full object-cover" />
+          <img src={LogoIcon} alt="Logo" className="w-full h-full object-cover cursor-pointer" />
         </div>
         <div className="w-10 h-10 rounded-full overflow-hidden">
-          <img src={ProfileIcon} alt="Profile" className="w-full h-full object-cover" />
+          <img src={ProfileIcon} alt="Profile" className="w-full h-full object-cover cursor-pointer" />
         </div>
       </div>
-      <div className="flex flex-col items-center gap-2 mt-10">
+      <div className="flex flex-col items-center gap-2 mt-10 ">
         {navIcons.map((item) => (
           <NavItem key={item.name} {...item} />
         ))}
